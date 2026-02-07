@@ -57,13 +57,13 @@ func New() Service {
 		log.Fatalf("Error connecting to database: %v", err)
 		return nil
 	}
-	db.Migrator().DropTable(
-		&model.Politician{},
-		&model.Campaign{},
-		&model.Promise{},
-		&model.PromiseUpdate{},
-		&model.User{},
-	)
+	// db.Migrator().DropTable(
+	// 	&model.Politician{},
+	// 	&model.Campaign{},
+	// 	&model.Promise{},
+	// 	&model.PromiseUpdate{},
+	// 	&model.User{},
+	// )
 	if config.AUTO_MIGRATE {
 		log.Println("Auto migrating database...")
 		err = db.AutoMigrate(
